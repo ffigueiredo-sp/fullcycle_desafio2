@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
         res.send(`
             <h1>Full Cycle Rocks!</h1>
             <ol>
-            ${!!results.length ? results.map(el => `<li>${el.name}</li>`).join('') : ''}
+            ${!!results.length ? results.map(el => `<li>${el.nome}</li>`).join('') : ''}
             </ol>
         `)
     })
@@ -39,8 +39,8 @@ function insertData(config){
 
     const connection = mysql.createConnection(config)
 
-    var name = `acesso:${Date.now()}`
-    var query = `INSERT INTO people(name) values ('${name}')`    
+    var nome = `acesso:${Date.now()}`
+    var query = `INSERT INTO people(nome) values ('${nome}')`    
     console.log('Query:' + query)
     connection.query(query)
     
